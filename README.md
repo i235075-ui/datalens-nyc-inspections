@@ -1,38 +1,41 @@
-# DataLens — [Hashir & Haider]
+# DataLens — Team Hashir & Haider
 
-> **Starter template:** This README is a template. Replace every section marked `[TODO]` with your actual content as you build. The quality of this README is part of your grade — see the grading rubric in the Final Project Specification.
+> AI-powered data analytics dashboard that transforms CSV datasets into interactive insights, visualizations, and AI-generated analysis.
+
+---
 
 ## Team
 
-- **Member 1:** [Hashir]
-- **Member 2:** [Haider]
-- **Assigned Dataset:** [Dataset name and number, e.g., "Dataset 16 — NYC-Resturants-Inspection-dataset"]
+- **Member 1:** Hashir Azhar  
+- **Member 2:** Haider Abid  
+- **Assigned Dataset:** Dataset 16 — NYC Restaurant Inspection Results  
+
+---
 
 ## Project Purpose
 
-[TODO — 2-3 sentences describing what DataLens does and who it serves. This should be accessible to someone who has not read the Final Project Specification.]
+DataLens is an AI-powered data analytics platform that allows users to upload CSV datasets and instantly generate meaningful insights, visual summaries, and interactive visualizations.
+
+It is designed for students, analysts, and non-technical users who want to quickly understand complex datasets without writing code. The system automatically profiles data, generates charts, computes correlations, and provides AI-driven explanations using a Groq LLM backend.
+
+---
 
 ## Prerequisites
 
-Before running this project, you need the following installed on your machine:
+Before running this project, install:
 
-- **Python 3.11 or higher** — [https://www.python.org/downloads/](https://www.python.org/downloads/)
-- **Node.js 18 or higher** — [https://nodejs.org/](https://nodejs.org/)
-- **uv** (Python package manager) — install with:
-  ```bash
-  curl -LsSf https://astral.sh/uv/install.sh | sh
-  ```
-  On Windows: `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
+- Python 3.11+ → https://www.python.org/downloads/
+- Node.js 18+ → https://nodejs.org/
+- uv (Python package manager):
+```bash
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 - **Git** — [https://git-scm.com/](https://git-scm.com/)
 
 ## LLM API Key Setup
 
 This application uses an LLM for the chat interface and executive summary features. You need an API key from at least one of the following providers:
 
-- **Google Gemini (recommended — has a free tier):** Get a key at [https://aistudio.google.com/apikey](https://aistudio.google.com/apikey)
-- **Anthropic Claude:** Get a key at [https://console.anthropic.com/](https://console.anthropic.com/)
-- **OpenAI:** Get a key at [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
-- **Groq (has a free tier):** Get a key at [https://console.groq.com/keys](https://console.groq.com/keys)
+GROQ_API_KEY=your_groq_api_key_here
 
 ## Setup Instructions
 
@@ -74,15 +77,26 @@ The command must install all dependencies (Python via uv, Node via npm) and star
 Once started, visit [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Usage
+1. Upload a CSV dataset using the upload button
+2. Wait for automatic profiling and analysis
+3. View dataset statistics and summaries
+4. Explore visualizations (charts, heatmaps)
+5. Ask questions using the AI chat panel
+6. Read AI-generated insights from your dataset
 
-[TODO — Brief usage walkthrough:
-1. Click "Upload" and select a CSV file
-2. Wait for data profiling to complete
-3. Explore the auto-generated dashboard
-4. Use the filters to narrow the view
-5. Ask questions in the chat panel
-6. Read the generated executive summary
-]
+### Features
+CSV dataset upload
+AI-generated business insights
+Interactive dashboard
+Bar charts
+Pie charts
+Line graphs
+Correlation heatmaps
+Dataset profiling
+AI-powered chat assistant
+PDF report generation
+FastAPI backend
+React frontend
 
 ## Running Tests
 
@@ -101,56 +115,77 @@ npm test
 ```
 
 ## Troubleshooting
+Problem: Backend not starting (port 8000)
 
-[TODO — Document common issues and their fixes. Add to this section as you encounter problems during development. At minimum, address:
+Fix:
+netstat -ano | findstr :8000
+taskkill /PID <pid> /F
 
-- Port already in use (8000 or 5173)
-- Python version mismatch
-- Node version mismatch
-- LLM API key issues or rate limits
-- CSV upload failures
-- Missing dependencies
+Problem: Frontend not loading (5173)
 
-Example format:
+Fix: 
+rm -rf node_modules
+npm install
+npm run dev
 
-**Problem:** `Port 8000 already in use`
-**Fix:** Find and stop the conflicting process: `lsof -i :8000` (macOS/Linux) or `netstat -ano | findstr :8000` (Windows)
-]
+Problem: AI not responding
+
+Fix:
+Ensure GROQ_API_KEY is set correctly
+Restart backend after setting environment variable
+Check Groq dashboard for quota limits
+
 
 ## Project Structure
 
 ```
 .
-├── .agent/skills/          # Agent Skills (6 mandatory skills, auto-loaded by coding agent)
-├── docs/
-│   ├── adrs/              # Architecture Decision Records
-│   └── report.md          # Final project reflection
-├── tasks/
-│   ├── plan.md            # Implementation plan
-│   └── todo.md            # Task breakdown
 ├── backend/
-│   ├── app/               # FastAPI application code
-│   └── tests/             # pytest tests
+│   ├── app/
+│   │   └── main.py
+│   └── tests/
+│
 ├── frontend/
-│   ├── src/               # React application code
-│   └── tests/             # Vitest tests
-├── SPEC.md                 # Project specification
-├── README.md               # This file
-├── .env.example           # Environment variable template
-└── pyproject.toml         # Python dependencies
+│   ├── src/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   └── App.jsx
+│   └── tests/
+│
+├── docs/
+│   ├── adrs/
+│   └── report.md
+│
+├── tasks/
+│   ├── plan.md
+│   └── todo.md
+│
+├── README.md
+├── .env.example
+├── pyproject.toml
+└── package.json
 ```
 
 ## Contribution Summary
 
-[TODO — Brief summary of who did what. This is used for grading team member contribution fairness.]
+Hashir Azhar:
+Backend development
+FastAPI API development
+AI integration using Groq
+Data profiling system
+Visualization API endpoints
+Correlation analysis
+PDF export functionality
 
-- **[Member 1 Name]:** [Primary responsibilities]
-- **[Member 2 Name]:** [Primary responsibilities]
+Haider Abid:
+Frontend UI design
+React dashboard development
+Chart integration
+Dashboard styling and UX improvements
+Frontend state management
+AI chat interface
 
 ## Acknowledgments
 
 This project was developed as part of the Spring 2026 Strategic Generative AI for Business course. We used [Antigravity / Claude Code / Codex / Cursor] as our coding agent, guided by the Agent Skills framework authored by Addy Osmani (MIT licensed, available at [https://github.com/addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)).
-
-## License
-
-[TODO — Choose a license or remove this section.]
