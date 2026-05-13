@@ -1,13 +1,12 @@
-# DataLens — [Your Team Name]
+# DataLens — [Hashir & Haider]
 
 > **Starter template:** This README is a template. Replace every section marked `[TODO]` with your actual content as you build. The quality of this README is part of your grade — see the grading rubric in the Final Project Specification.
 
 ## Team
 
-- **Member 1:** [Name]
-- **Member 2:** [Name]
-- **Member 3 (if applicable):** [Name]
-- **Assigned Dataset:** [Dataset name and number, e.g., "Dataset 10 — Hotel Booking Demand"]
+- **Member 1:** [Hashir]
+- **Member 2:** [Haider]
+- **Assigned Dataset:** [Dataset name and number, e.g., "Dataset 16 — NYC-Resturants-Inspection-dataset"]
 
 ## Project Purpose
 
