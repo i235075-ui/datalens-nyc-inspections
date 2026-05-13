@@ -58,8 +58,6 @@ Open `.env` in a text editor and fill in:
 
 ### 3. Install dependencies and start the application
 
-[TODO — Document the single command that starts both the backend and frontend. Example:
-
 ```bash
 ./start.sh
 ```
